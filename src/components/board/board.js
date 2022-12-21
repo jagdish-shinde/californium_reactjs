@@ -8,6 +8,9 @@ export default function Board () {
 
     function handleClick (index) {
         const statesCopy = [...states]
+        if(states[index]){
+            return
+        }
         const itemToAdd = is0tern ? '0' : 'X'
         statesCopy[index] = itemToAdd
         setStates(statesCopy)
@@ -24,6 +27,12 @@ export default function Board () {
         [0,4,8],
         [2,4,6]
     ]
+
+    const strtingIndexes = {
+        0 : [0,1,2],
+        1 : [3,4,5],
+        2 : [6,7,8]
+    }
 
     function getWinner () {
         let winner ;
@@ -51,22 +60,22 @@ export default function Board () {
                     </button>
                 </div> :
                 <Fragment>
-                    <div className = 'boardRow'>
-                        <Square value = {states[0]} handleClick = {() => handleClick(0)}/>
-                        <Square value = {states[1]} handleClick = {() => handleClick(1)}/>
-                        <Square value = {states[2]} handleClick = {() => handleClick(2)}/>
-                    </div> 
-                    <div className = 'boardRow'>
-                        <Square value = {states[3]} handleClick = {() => handleClick(3)}/>
-                        <Square value = {states[4]} handleClick = {() => handleClick(4)}/>
-                        <Square value = {states[5]} handleClick = {() => handleClick(5)}/>
-                    </div> 
-                    <div className = 'boardRow'>
-                        <Square value = {states[6]} handleClick = {() => handleClick(6)}/>
-                        <Square value = {states[7]} handleClick = {() => handleClick(7)}/>
-                        <Square value = {states[8]} handleClick = {() => handleClick(8)}/>
-
-                    </div>
+                    {Array(3).fill(1).map((_,index) => (
+                        <div className = 'boardRow' key={index}>
+                            <Square 
+                                value = {states[strtingIndexes[index][0]]} 
+                                handleClick = {() => handleClick(strtingIndexes[index][0])}
+                            />
+                            <Square 
+                                value = {states[strtingIndexes[index][1]]} 
+                                handleClick = {() => handleClick(strtingIndexes[index][1])}
+                            />
+                            <Square 
+                                value = {states[strtingIndexes[index][2]]} 
+                                handleClick = {() => handleClick(strtingIndexes[index][2])}
+                            />
+                        </div> 
+                    ))}
                 </Fragment>
            
             }
