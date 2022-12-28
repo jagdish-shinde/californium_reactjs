@@ -1,0 +1,10 @@
+.getNewImageBtn{
+    height : 3rem;
+    border: 0;
+    background-color: blue;
+    border-radius: 5px;
+    padding: 0 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    cursor: pointer;
+}
