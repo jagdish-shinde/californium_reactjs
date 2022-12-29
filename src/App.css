@@ -1,6 +1,29 @@
-.App{
-  height: 100vh;
+.horizontal-scroll {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  gap: 25px;
+  height: 20rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  margin-top: 5rem;
 }
+  ::-webkit-scrollbar {
+    display: none;
+  } 
+  
+  .horizontal-scroll__item {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex: 0 0 20rem;
+    justify-content: center;
+    scroll-snap-align: start;
+    
+  }
+  .img{
+    height: 20.125rem;
+    width: 20rem;
+    
+  }
