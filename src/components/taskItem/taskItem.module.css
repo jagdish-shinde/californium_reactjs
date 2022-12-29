@@ -1,0 +1,56 @@
+.itemWrapper{
+    border: 1px solid grey;
+    display: flex;
+    padding: 0 1rem;
+    width: 90%;
+    margin: 0 auto ;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    min-height: 60px;
+}
+.buttonWrapper{
+    flex: 1;
+    composes : flexTwo from '../../commonStyle.module.css';
+}
+
+/* composes use to copy css by class name */
+
+.editHandlerBtns{
+    composes : buttonWrapper ;
+}
+.container{
+    flex: 1;
+    word-break: break-all;
+    composes : flexOne from '../../commonStyle.module.css'
+}
+.deleteBtn{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.scratchedTask{
+    text-decoration: line-through;
+}
+.newTaskInput{
+    height: 50%;
+    width: 100%;
+    padding-left: 1rem;
+}
+.commonBtnCss {
+    cursor: pointer;
+    color: white;
+    font-weight: 700;
+    border: 0;
+    border-radius: 5px;
+}
+.saveBtn {
+    composes : commonBtnCss;
+    background-color: green;
+    padding: 0.5rem 1rem;
+}
+.complateBtn{
+    composes : commonBtnCss;
+    padding: 0.5rem;
+    background-color: blue;
+
+}
+

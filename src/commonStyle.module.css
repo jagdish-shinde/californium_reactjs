@@ -1,0 +1,10 @@
+.flexOne {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flexTwo{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+}
