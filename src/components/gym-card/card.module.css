@@ -1,0 +1,52 @@
+.card{
+    width: 31.25REM;
+    margin-right: 0.625rem;
+    border-radius: 10px;
+    padding-bottom: 4.375rem;
+    padding-top: 0.938rem;
+    flex: 0 0 20rem;
+    scroll-snap-align: start;
+    color: black;
+    transition: transform 0.2s;
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+}
+.card:hover{
+    background-color: #4645b0;
+    transform: scale(1.1); 
+    padding-top: 0px;    
+    color: white;
+    padding-bottom: 1.875rem;
+}
+
+
+.cardHeading{
+    text-align: center;
+    margin-bottom: 1.875rem;
+}
+.contentHeading{
+    padding-left: 10%;
+}
+.planName{
+    display: block;
+    margin-top: 0.313rem;
+    font-size: 0.625rem;
+}
+
+ul{
+    list-style-type: none;
+}
+.listItem{
+    margin-bottom: 0.5rem;
+    display: flex;
+}
+.trialButton{
+    background-color: yellow;
+    width: 50%;
+    padding: 0.313rem;
+    margin: auto;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
