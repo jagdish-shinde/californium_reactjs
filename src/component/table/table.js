@@ -6,7 +6,7 @@ export default function Table ({tabledata,handleClickButton}) {
 
     return(
         <div className={style.wrapper}>
-
+            {/* creating heading row */}
             <div className={style.heaadRow}>
                 <p className={style.head}>UserId</p>
                 <p className={style.head}>Title</p>
@@ -14,6 +14,7 @@ export default function Table ({tabledata,handleClickButton}) {
             </div>
 
         {tabledata.map((data, index) => (
+            // creating table rows
             <div className={style.container}>
                 <p className={style.text}>{data.id}</p>
                 <p className={style.text}>{data.title}</p>
