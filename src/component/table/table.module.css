@@ -1,0 +1,36 @@
+.wrapper{
+    width: 40%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 2rem;
+}
+.head{
+    flex: 1;
+}
+.heaadRow{
+    display: flex;
+}
+.container{
+    display: flex;
+}
+.text{
+    flex: 1;
+    border: 1px solid grey;
+    overflow: scroll;
+    display: flex;
+    align-items: center;justify-content: center;
+    height: 4rem;
+}
+.text::-webkit-scrollbar{
+    display: none;
+}
+.rightArrow{
+    font-size : 2rem;
+    color : #ff0000;
+    cursor : pointer
+}
+.leftArrow{
+    composes : rightArrow;
+    margin-right: 1rem;
+}
