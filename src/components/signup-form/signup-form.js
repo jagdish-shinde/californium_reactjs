@@ -33,6 +33,9 @@ export default function SignupForm () {
     const nevigate = useNavigate()
     const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
 
+    // we can handle this function in more appropriate way
+    // will do it togather , so you guys can get this thing .
+
     function handleName (inputName) {
         setName(inputName)
     }
@@ -164,6 +167,7 @@ export default function SignupForm () {
                     Confirm your own age, even if this account is for a business, a pet, or something else.
                 </p>
                 <div className={style.selectWrapper}>
+                    {/* we can handle this using map */}
                     <CustomSelect 
                         data = {dateArray}
                         handleSelect = {handleDate}
