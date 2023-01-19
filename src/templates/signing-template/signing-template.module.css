@@ -1,0 +1,51 @@
+
+
+@media screen and (min-width: 1024px)  {
+
+    .twitterIconWrapper{
+        display: flex;
+        justify-content: center;
+    }
+    .heading{
+        font-size: 2rem;
+        line-height: calc(36rem/16);
+        text-align: center;
+    }
+    .icon{
+        color: black;
+        width: 1.5rem;
+        height: 1.5rem;
+
+    }
+    .textStyle{
+        font-weight: 700;
+    }
+    .wrapper{
+        padding: 2rem calc(150rem/16);
+        min-height: calc(600rem/16);
+    }
+    .seprator{
+        composes : flexStyleOne from '../../../src/common.css';
+
+    }
+    .spanTag {
+        border-top: 1px solid lightgray;
+        flex: 1;
+    }
+    .spanTag:nth-child(2){
+        flex: none;
+        border: none;
+        padding: 0 0.5rem;
+    }
+    .footText{
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .redirectText{
+        color : #00acee;
+        margin-left : 0.4rem
+    }
+
+
+}
