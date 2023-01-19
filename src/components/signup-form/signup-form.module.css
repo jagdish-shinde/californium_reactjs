@@ -1,0 +1,34 @@
+@media screen and (min-width: 1024px)  {
+.wrapper{
+    padding : 2rem calc(80rem/16); 
+    width: auto
+}
+.inputCss{
+    width: calc(450rem/16);
+    margin-bottom: 1rem;
+}
+.numberInput{
+    composes : inputCss ;
+}
+.numberInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+.selectWrapper{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.submitBtn{
+    margin-top: 2rem;
+    padding: 0.8rem;
+}
+.birthHeading{
+    font-size: calc(15rem/16);
+    font-weight: 700;
+}
+.birthDateInstruction{
+    font-size: calc(14rem/16);
+}
+
+}
