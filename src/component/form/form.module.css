@@ -1,0 +1,24 @@
+
+@media screen and (min-width : 1024px) {
+
+    .form{
+        color: #ffffff;
+        padding: 2rem 3rem;
+        /* pading : t r b l */
+        /* padding tb  lr */
+        
+
+    }
+    .heading{
+        font-size: 1.3rem;
+    }
+    .submitBtn{
+        background-color: lightgreen;
+        border-radius: 20px;
+        /* color: white; */
+
+        /* height: 10rem !important; */
+    }
+
+
+}

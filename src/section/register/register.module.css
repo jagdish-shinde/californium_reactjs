@@ -1,0 +1,22 @@
+
+@media screen and (min-width : 1024px) {
+
+    .wrapper{
+        /* border: 1px solid red; */
+        width : 60vw;
+        display: flex;
+        height: 50vh;
+        /* justify-content: space-around; */
+    }
+    .leftSec{
+        background-color: red;
+        flex:1 ;
+        background-image: url(https://colorlib.com/etc/regform/colorlib-regform-3/images/bg-heading-03.jpg);
+        background-size: cover;
+    }
+    .rightSec{
+        background-color: black;
+        flex: 1;
+    }
+    
+}
