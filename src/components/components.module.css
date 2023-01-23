@@ -1,0 +1,25 @@
+.wrapper{
+    /* border: 1px solid red; */
+    width: 25%;
+    margin: 0 auto;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+.imgWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.image{
+    border-radius: 50%;
+    border: 1px solid white;
+}
+.text{
+    /* padding-top: 1rem; */
+}

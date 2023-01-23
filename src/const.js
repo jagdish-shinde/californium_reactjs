@@ -1,6 +1,6 @@
 
 
-const tweetPosts = [
+export const tweetPosts = [
     {
         name  : 'The White House',
         handlerName : '@The White House' ,
@@ -10,7 +10,11 @@ const tweetPosts = [
         tweetCount : 100,
         retweetCount : 100 ,
         likesCount : 100,
-        viewsCount : '102k'
+        viewsCount : '102k',
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 1
     },
     {
         name : 'Mukund',
@@ -22,7 +26,11 @@ const tweetPosts = [
         retweetCount : 200 ,
         likesCount : 200,
         viewsCount : '10k',
-        hastags : ['#wildLife','#photoGraphy']
+        hastags : ['#wildLife','#photoGraphy'],
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 2
     },
     {
         name : 'Usain St. Leo Bolt',
@@ -34,7 +42,11 @@ const tweetPosts = [
         retweetCount : 700 ,
         likesCount : 900,
         viewsCount : '100k',
-        refLink : 'https://www.globalwildlife.org/blog/'
+        refLink : 'https://www.globalwildlife.org/blog/',
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022' ,
+        id : 3
     },
     {
         name : 'Andrew Elliott',
@@ -46,7 +58,11 @@ const tweetPosts = [
         retweetCount : 327 ,
         likesCount : 90,
         viewsCount : '7k',
-        hastags : ['#sports','#Winners']
+        hastags : ['#sports','#Winners'],
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022' ,
+        id : 4
     },
     {
         name : 'RVCJ Media',
@@ -59,6 +75,11 @@ const tweetPosts = [
         likesCount : 900,
         viewsCount : '17k',
         hastags : ['#HockeyLover' , '#Hockey' , '#Team India'],
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 5
+        
 
     } ,
     {
@@ -72,7 +93,11 @@ const tweetPosts = [
         tweetCount : 650,
         retweetCount : 699 ,
         likesCount : 900,
-        viewsCount : '17k'
+        viewsCount : '17k',
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 6
     },
     {
         name : 'Sudarsan Pattnaik',
@@ -85,7 +110,11 @@ const tweetPosts = [
         retweetCount : 509 ,
         likesCount : 450,
         viewsCount : '79k',
-        hastags : ['#Freedom Fighter','#India']
+        hastags : ['#Freedom Fighter','#India'],
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 7
     },
     {
         name : 'Arvind Kumar',
@@ -99,7 +128,11 @@ const tweetPosts = [
         likesCount : 450,
         viewsCount : '79k',
         refLink : 'https://twitter.com/AshwiniVaishnaw',
-        hastags: ['#Electronics','#iphone']
+        hastags: ['#Electronics','#iphone'],
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 8
     },
     {
         name : 'kimkk',
@@ -113,7 +146,11 @@ const tweetPosts = [
         likesCount : 40,
         viewsCount : '9k',
         hastags : ['#bcm112','#students','#education','#allGovernmets'] ,
-        refLink : 'https://twitter.com/ippittipapitti'
+        refLink : 'https://twitter.com/ippittipapitti',
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 9
     },
     {
         name : 'Dainik Bhaskar',
@@ -126,7 +163,52 @@ const tweetPosts = [
         likesCount : 40,
         viewsCount : '9k',
         hastags : ['#Education','#Rajasthan'],
-        refLink : 'https://dainik-b.in/ekPIEaD5Jwb'
-
+        refLink : 'https://dainik-b.in/ekPIEaD5Jwb',
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022',
+        id : 10
+    },
+    {
+        name : 'Madhya Pradesh Tourism',
+        handlerName : '@MPTourism',
+        organization : 'Mp tourism',
+        tweetText : 'If you are a nature-lover who loves to spend time in the jungle and adores the mighty #bigcats, plan a jungle safari in the #HeartofIndia. Wander through the lush green forests and keep your cameras handy!',
+        tweetPic : 'https://lh3.googleusercontent.com/gyVQi-t5YrzlIrjmHfngOfmDKQOnICIwp3fHGjesIVQ8JCj-A0IU7GU9xc0PUS1bqr_uXIbsWLApie_FMq4kEqc7HZ789NrrZxghtedBFl1VfN5owv8nYoWT4ZYAXpWUojS2Xnfv6w=w1920-h1080',
+        retweetCount : 50 ,
+        likesCount : 40,
+        viewsCount : '9k',
+        hastags : ['#BIGcat','#HeartofIndia'],
+        refLink : 'https://www.mptigerfoundation.org/news-corner/blog' ,
+        followers : 200,
+        followings : 400,
+        joinedDate : '22 dec 2022' ,
+        id : 11,
+        tweetData : [
+            {
+                name : '',
+                handlerName : '',
+                tweetText : '',
+                tweetPic : ''
+            } ,
+              {
+                name : '',
+                handlerName : '',
+                tweetText : '',
+                tweetPic : ''
+            },
+              {
+                name : '',
+                handlerName : '',
+                tweetText : '',
+                tweetPic : ''
+            },
+              {
+                name : '',
+                handlerName : '',
+                tweetText : '',
+                tweetPic : ''
+            }
+        ]
     }
 ]

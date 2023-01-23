@@ -3,11 +3,38 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  RecoilRoot
+} from 'recoil';
+import ProfilePage from './profilePage';
+
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+  },
+  {
+    path : '/profilePage',
+    element : <ProfilePage/>
+  }
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+    <RouterProvider router={router} />
+        {/* <App/> */}
+    </RecoilRoot>
   </React.StrictMode>
 );
 
