@@ -1,0 +1,13 @@
+@media screen and (min-width : 1024px){
+    .homePage {
+        /* background-color: red; */
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        /* flex: 1 2 1; */
+        padding: 0 10rem;
+    }
+    .homePage >*{
+        /* flex: 1; */
+    }
+}

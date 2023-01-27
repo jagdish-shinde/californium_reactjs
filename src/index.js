@@ -8,9 +8,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { RecoilRoot } from 'recoil';
-import HomePage from './pages/home';
 import SignInPage from './pages/signin';
 import SignUpPage from './pages/signup';
+import HomePage from './pages/home/home';
 
 
 const router = createBrowserRouter([

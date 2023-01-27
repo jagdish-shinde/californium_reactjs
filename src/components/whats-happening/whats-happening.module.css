@@ -1,0 +1,21 @@
+.heading{
+    font-size: calc(15rem/16);
+    font-weight: 700;
+    padding: calc(12rem/16) 1rem;
+}
+.wrapper{
+    background-color: rgb(118, 118, 118,0.1);
+    border-radius: 10px;
+}
+.seeAll{
+    color: rgb(29, 155, 240);
+    padding-left: 1rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding-bottom: 1rem;
+    cursor :pointer;
+}
+
+.trending{
+
+}

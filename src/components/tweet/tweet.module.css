@@ -1,0 +1,69 @@
+@media screen and (min-width : 1024px){
+    .imgWrapper{
+        height: calc(48rem/16);
+        width: calc(48rem/16);
+        border-radius: 50%;
+        overflow: hidden;
+        position: relative;
+        /* border: 1px solid red; */
+    }
+    .tweetHeadingWrapper{
+        padding:1rem;
+        display: flex;
+        /* border: 1px solid red; */
+        gap: 1rem;
+    }
+    .textArea{
+        border: 0;
+        outline: 0;
+        /* border:1px solid blue; */
+        width: 100%;
+        /* height: auto; */
+        overflow: auto;
+        padding-top: 0.6rem;
+        resize: none;
+    }
+    .textArea::placeholder{
+        font-size: calc(20rem/16);
+        /* font-weight: 700; */
+    }
+    .tweetBtn{
+        background: rgb(29, 155, 240);
+        color: white;
+        margin: 0;
+        /* flex: 1; */
+        border: none;
+        outline: none;
+        width: 5rem;
+    }
+    .btnWrapper{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .tweetFooterWrapper{
+        border-bottom: 0.5px solid lightgray;      
+        border-top: 0.5px solid lightgray;      
+        display: flex;
+        margin: 0 1rem;
+        padding: 0.5rem;
+    }
+    .icons{
+        flex: 1;
+        /* border: 1px solid grey; */
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .icon{
+        color: rgb(29, 155, 240) ;
+        cursor: pointer;
+    }
+    .crossContainer{
+        padding:0.5rem 1rem;
+        cursor: pointer;
+        /* border: 1px solid red; */
+    }
+
+}

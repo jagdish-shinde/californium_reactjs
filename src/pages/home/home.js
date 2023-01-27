@@ -1,7 +1,13 @@
 import { useEffect } from "react"
 import { useRecoilValue } from "recoil"
-import { isUserLoggedInAtom } from "../recoil-states"
+import { isUserLoggedInAtom } from "../../recoil-states"
 import { useNavigate } from "react-router-dom"
+import {
+    Posts,
+    LeftSec,
+    RightSec
+} from '../../sections/export'
+import style from './home.module.css'
 
 export default function HomePage () {
 
@@ -12,9 +18,12 @@ export default function HomePage () {
         if(!isUserLoggedIn) {
             nevigate('/signin')
         }
-
-    },[])
+    },[isUserLoggedIn])
     return(
-        <h1>Welcome to the home page !!</h1>
+        <main className={style.homePage}>
+            <LeftSec/>
+            <Posts/>
+            <RightSec/>
+        </main>
     )
 }

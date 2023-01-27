@@ -1,0 +1,68 @@
+@media screen and (min-width : 1024px){
+    .imgWrapper{
+        height: calc(48rem/16);
+        width: calc(48rem/16);
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .cardWrapper{
+        /* border: 1px solid red; */
+        padding: 1rem;
+        color: black;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        font-size: calc(15rem/16);
+        position: relative;
+    }
+    .nameWrapper >*{
+        margin: 0;
+    }
+    .name:first-child{
+        font-weight: 700;
+        padding-bottom: 0.3rem;
+    }
+    .moreIcon{
+        justify-self: flex-end;
+        position: absolute;
+        right: 1rem;
+    }
+    .wrapper{
+
+    }
+    .container{
+        padding: 0 2rem 0 5rem;
+        font-size: calc(15rem/16);
+    }
+    .hashtags{
+        composes : container ;
+        padding-top: 1rem;
+        font-weight: 700;
+
+    }
+    .hashtags>*{
+        padding: 0 0.5rem;
+    }
+    .tweetText{
+        margin: 0;
+    }
+    .container >*{
+        margin-bottom: 0.5rem;
+    }
+    .hashtags{
+
+    }
+    .tweetPic{
+        height: 20rem;
+        position: relative;
+        box-sizing: border-box;
+        padding: 1rem 2rem 1rem 4rem;
+    }
+    .wrapper:hover{
+        background-color: rgb(248, 248, 248);
+    }
+    .wrapper{
+        padding: 1rem;
+        cursor: pointer;
+    }
+}

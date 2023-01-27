@@ -25,6 +25,12 @@ export default function SignInComponent () {
         setPassword(inputPassword)
     }
     function handleClickButton () {
+        const userData = JSON.parse(localStorage.getItem('userData'))
+        if(!userData){
+            alert('No user exist !')
+            return
+        }
+
 
         if(!signInInput) {
             alert('please Enter Email or Phone to continue !!')
@@ -40,7 +46,6 @@ export default function SignInComponent () {
             return
         }
 
-        const userData = JSON.parse(localStorage.getItem('userData'))
         const {
             password : savedPassword ,
             email ,

@@ -1,0 +1,43 @@
+@media screen and (min-width : 1024px){
+    .wrapper{
+        display: flex;
+        align-items: center;
+        position: relative;
+        /* border: 1px solid red; */
+        padding: 0.5rem 1rem;
+        /* z-index: 3; */
+    }
+    .trendingData >*{
+        margin: 0;
+        font-size: calc(13rem/16);
+        padding: 0.1rem 0;
+        z-index: 1;
+        position: relative;
+    }
+
+
+    .trendingDataText:nth-child(2){
+        font-weight: 700;
+    }
+    .moreIcon{
+        position: absolute;
+        right: 1rem;
+        cursor: pointer;
+    }
+    .popOver{
+        background: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: fit-content;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        padding: 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: -3rem;
+        margin-left: 1rem;
+        z-index: 2;
+        position: relative;
+        gap: 1rem;
+    }
+}

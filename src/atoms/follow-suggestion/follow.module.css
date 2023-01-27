@@ -1,0 +1,42 @@
+@media screen and (min-width : 1024px){
+    .imgWrapper{
+        position: relative;
+        height: calc(48rem/16);
+        width: calc(48rem/16);
+        /* border: 1px solid red; */
+        border-radius: 50%;
+        overflow: hidden;
+        /* display: flex; */
+    }
+    .names{
+        display: flex;
+        flex-direction: column;
+        font-size: calc(10rem/16);
+        word-break: break-all;
+        /* padding-right: 0.2rem; */
+        box-sizing: border-box;
+        /* border: 1px solid red; */
+        /* width: 7rem; */
+    }
+    .wrapper{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        position: relative;
+        padding-left: 1rem;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    .wrapper:hover{
+        background-color: rgb(118, 118, 118,0.1);
+    }
+    .FollowBtn{
+        font-size: calc(12rem/16);
+        width: fit-content;
+        padding: 0.5rem 1rem;
+        position: absolute;
+        right: 1rem;
+        margin-left: 0.3rem;
+        box-sizing: border-box;
+    }
+}

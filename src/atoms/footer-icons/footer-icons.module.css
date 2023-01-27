@@ -1,0 +1,30 @@
+@media screen and (min-width : 1024px){
+    .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 0 2rem 0 4rem;
+        font-size: 1.5rem;
+        /* color: blue; */
+    }
+    .reply{
+
+    }
+    .like{
+        /* color: black; */
+    }
+    .counts{
+        font-size: 1rem;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+    }
+    .counts >*{
+        margin-right: 0.2rem;
+    }
+    .icon{
+        font-size: 1.2rem;
+        /* padding-top: 0.2rem; */
+    }
+
+}

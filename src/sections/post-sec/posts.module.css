@@ -1,0 +1,40 @@
+@media screen and (min-width: 1024px)  {
+
+    .postWrapper{
+        border:0.5px solid lightgray ;
+        flex: 2 ;
+        /* background-color: red; */
+        /* overflow: auto; */
+    }
+    .header{
+        border-bottom: 0.5px solid lightgray;
+        padding : 0 1rem;
+        /* opacity: 0.3; */
+        /* background-color: transparent; */
+        /* padding-top: 1rem; */
+        /* padding-bottom: 2rem; */
+    }
+    .heading{
+        font-size: calc(20rem/16);
+        font-weight: 700;
+    }
+    .headerOptionWrapper{
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 1rem 0;
+        /* padding-top: 1rem; */
+        /* padding-bottom: 1.5rem; */
+        cursor: pointer;
+        
+    }
+    .postsWrapper{
+        overflow: auto;
+        max-height: 100%;
+    }
+    .postsWrapper::-webkit-scrollbar{
+        display: none;
+    }
+}
