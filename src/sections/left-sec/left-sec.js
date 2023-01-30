@@ -12,7 +12,7 @@ import CustomButton from '../../atoms/customButton/custom-button';
 import profile from '../../images/dummyProfile.jpeg'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { useState } from 'react';
-import { isUserLoggedInAtom ,newUserDataAtom } from '../../recoil-states';
+import { isUserLoggedInAtom ,loggedInUserAtom } from '../../recoil-states';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import Dialog from '@mui/material/Dialog';
@@ -27,7 +27,7 @@ export default function LeftSec () {
 
     const nevigate = useNavigate()
     const setUsersLoginStatus = useSetRecoilState(isUserLoggedInAtom)
-    const loggedInUser = useRecoilValue(newUserDataAtom)
+    const loggedInUser = useRecoilValue(loggedInUserAtom)
 
     const optionsData = [
         {

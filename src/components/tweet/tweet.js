@@ -7,11 +7,11 @@ import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useRef, useState } from 'react';
-import { newlyAddedPostAtom ,newUserDataAtom} from '../../recoil-states';
+import { newlyAddedPostAtom ,loggedInUserAtom} from '../../recoil-states';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import CloseIcon from '@mui/icons-material/Close';
 import { getUniqueCode } from '../../helper';
-// import { newUserDataAtom } from '../../recoil-states';
+// import { loggedInUserAtom } from '../../recoil-states';
 
 
 export default function Tweet ({isCloseBtnVisible = false , handleClickCloseBtn}) {
@@ -21,7 +21,7 @@ export default function Tweet ({isCloseBtnVisible = false , handleClickCloseBtn}
 
     const inputRef = useRef(null)
     const setNewlyAddedPost = useSetRecoilState(newlyAddedPostAtom)
-    const newUser = useRecoilValue(newUserDataAtom)
+    const loggedInUser = useRecoilValue(loggedInUserAtom)
 
 
         // to make twwet footer 
@@ -101,7 +101,7 @@ export default function Tweet ({isCloseBtnVisible = false , handleClickCloseBtn}
 
                 <div className={style.imgWrapper}>
                     <img
-                        src = {newUser?.profilePic || profile}
+                        src = {loggedInUser?.profilePic || profile}
                         height = '100%'
                         width = '100%'
                     />

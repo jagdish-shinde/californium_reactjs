@@ -5,9 +5,9 @@ import CustomInputField from '../../atoms/custom-input/custom-input';
 import CustomButton from '../../atoms/customButton/custom-button';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { isUserLoggedInAtom,newUserDataAtom } from '../../recoil-states';
+import { isUserLoggedInAtom,loggedInUserAtom } from '../../recoil-states';
 import { useSetRecoilState } from 'recoil';
-import { postData } from '../../const';
+import { userProfiles } from '../../const';
 
 export default function SignInComponent () {
 
@@ -17,7 +17,7 @@ export default function SignInComponent () {
 
     const nevigate = useNavigate()
     const setUserLoggedInStatus = useSetRecoilState(isUserLoggedInAtom)
-    const setNewUser = useSetRecoilState(newUserDataAtom)
+    const setLogedInUser = useSetRecoilState(loggedInUserAtom)
 
 
     const handleSignInInput = (inputVal) => {
@@ -27,7 +27,6 @@ export default function SignInComponent () {
         setPassword(inputPassword)
     }
     function handleClickButton () {
-        // const userData = JSON.parse(localStorage.getItem('userData'))
 
         if(!signInInput) {
             alert('please Enter Email or Phone to continue !!')
@@ -43,7 +42,7 @@ export default function SignInComponent () {
             return
         }
 
-        const user = postData.find(userDetails => {
+        const user = userProfiles.find(userDetails => {
             const {
                 mobile,
                 email,
@@ -57,39 +56,13 @@ export default function SignInComponent () {
             }
         })
 
-       
         if(user){
             localStorage.setItem('userData',JSON.stringify(user))
             setUserLoggedInStatus(true)
             nevigate('/')
-            setNewUser(user)
+            setLogedInUser(user)
             return
         }
-
-
-        // alert('User not exist !! Please signUp ...')
-
-        
-        // const {
-        //     password : savedPassword ,
-        //     email ,
-        //     phone
-        // } = userData || {}
-
-        // if(email && signInInput!==email){
-        //     alert('No such user exist , please signUp to start !!')
-        //     return
-        // }
-        // if(phone && signInInput !== phone) {
-        //     alert('No such user exist , please signUp to start !!')
-        //     return
-        // }
-        // if(password !== savedPassword){
-        //     alert('Wrong password !!')
-        //     return
-        // }
-        // setUserLoggedInStatus(true)
-        // nevigate('/')
     }
 
     return(

@@ -4,7 +4,7 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FooterIcons from '../../atoms/footer-icons/footer-icons';
 import { Fragment } from 'react';
 
-export default function PostCard({postDetails}) {
+export default function PostCard({userProfileInfo}) {
    
     const {
         name = '',
@@ -12,7 +12,7 @@ export default function PostCard({postDetails}) {
         organization = '',
         tweets = [],
         profilePic
-    } = postDetails || {}
+    } = userProfileInfo || {}
 
     if(!tweets.length){    
         return null

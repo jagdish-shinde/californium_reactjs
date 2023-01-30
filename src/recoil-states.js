@@ -10,7 +10,7 @@ export const newlyAddedPostAtom = atom ({
     default : null
 })
 
-export const newUserDataAtom = atom ({
-    key : 'newUserData' ,
+export const loggedInUserAtom = atom ({
+    key : 'loggedInUser' ,
     default : null 
 })

@@ -19,7 +19,7 @@ import {
  import {useNavigate} from 'react-router-dom'
  import { isUserLoggedInAtom } from '../../recoil-states'
 import { useSetRecoilState } from 'recoil'
-import { newUserDataAtom } from '../../recoil-states'
+import { loggedInUserAtom } from '../../recoil-states'
 
 export default function SignupForm () {
 
@@ -34,7 +34,7 @@ export default function SignupForm () {
 
     const nevigate = useNavigate()
     const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
-    const setNewUser = useSetRecoilState(newUserDataAtom)
+    const setLoggedInUser = useSetRecoilState(loggedInUserAtom)
 
     // we can handle this function in more appropriate way
     // will do it togather , so you guys can get this thing .
@@ -102,7 +102,7 @@ export default function SignupForm () {
         }
       
         // localStorage.setItem('userData',JSON.stringify(userData))
-        setNewUser(userData)
+        setLoggedInUser(userData)
         setUserLoginStatus(true)
         nevigate('/')
         

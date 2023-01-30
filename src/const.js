@@ -15,7 +15,7 @@ const monthArray = [
 ]
 const yearArray = Array(25).fill(2000).map((year,index) => year + index)
 
-const postData = [
+const userProfiles = [
     {
         id : 1 ,
         mobile : 9156706438,
@@ -247,6 +247,6 @@ module.exports  = {
     dateArray,
     yearArray,
     monthArray,
-    postData,
+    userProfiles,
     trendinsData
 }
