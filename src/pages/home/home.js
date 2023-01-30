@@ -14,11 +14,16 @@ export default function HomePage () {
     const isUserLoggedIn = useRecoilValue(isUserLoggedInAtom)
     const nevigate = useNavigate()
 
+    //  checcking if user is Loggedin OR not .
+    // if loggedIn will show home page .
+    //  if not will ask him to login/register .
+    
     useEffect (() => {
         if(!isUserLoggedIn) {
-            nevigate('/signin')
+            nevigate('/signin/rekha')
         }
     },[isUserLoggedIn])
+
     return(
         <main className={style.homePage}>
             <LeftSec/>

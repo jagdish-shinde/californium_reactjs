@@ -7,19 +7,24 @@ import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import EmojiEmotionsOutlinedIcon from '@mui/icons-material/EmojiEmotionsOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { useRef, useState } from 'react';
-import { newlyAddedPostAtom } from '../../recoil-states';
-import { useSetRecoilState } from 'recoil';
+import { newlyAddedPostAtom ,newUserDataAtom} from '../../recoil-states';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
 import CloseIcon from '@mui/icons-material/Close';
+import { getUniqueCode } from '../../helper';
+// import { newUserDataAtom } from '../../recoil-states';
 
 
-export default function Tweet ({isCloseBtnVisible = false ,handleClickCloseBtn}) {
+export default function Tweet ({isCloseBtnVisible = false , handleClickCloseBtn}) {
 
     const [image,setImage] = useState('')
     const [inputTweet , setInputTweet] = useState('')
+
     const inputRef = useRef(null)
     const setNewlyAddedPost = useSetRecoilState(newlyAddedPostAtom)
+    const newUser = useRecoilValue(newUserDataAtom)
 
 
+        // to make twwet footer 
     const iconList = [
         {
             icon : <CollectionsIcon
@@ -51,25 +56,28 @@ export default function Tweet ({isCloseBtnVisible = false ,handleClickCloseBtn})
         }  
     ]
 
+    // function to triiger picking image imput
     function handleOnClickIcon (action) {
-        if(action === 'pickImage'){
-            alert('picking image')
+        if(action === 'pickImage'){       
+            inputRef.current.click()
         }
-        inputRef.current.click()
     }
+
+    // Function to pick image 
     function handleOnSelectImage (e) {
         let reader = new FileReader();
         reader.onload = (e) => {
             setImage(e.target.result);
+            inputRef.current = null 
         };
         reader.readAsDataURL(e.target.files[0]);
     }
 
+    // function to submit the twwet
     function handleSubmitTweet () {
         setNewlyAddedPost({
-            name : 'jagdish',
-            handlerName : 'jaGdish@7898',
             tweetText : inputTweet,
+            tweetPic : image,
             tweetCount : 0,
             retweetCount : 0 ,
             likesCount : 0,
@@ -78,18 +86,22 @@ export default function Tweet ({isCloseBtnVisible = false ,handleClickCloseBtn})
         })
         setInputTweet('')
         setImage('')
-        inputRef.current = null 
         handleClickCloseBtn()
     }
     return(
-        <div>
-            {isCloseBtnVisible && <div className={style.crossContainer}>
-                <CloseIcon onClick = {handleClickCloseBtn}/>
-            </div>}
+        <div >
+            {
+                isCloseBtnVisible && 
+                <div className={style.crossContainer}>
+                    <CloseIcon onClick = {handleClickCloseBtn}/>
+                </div>
+            }
+            {/* input space ... */}
             <div className={style.tweetHeadingWrapper}>
+
                 <div className={style.imgWrapper}>
                     <img
-                        src = {profile}
+                        src = {newUser?.profilePic || profile}
                         height = '100%'
                         width = '100%'
                     />
@@ -101,9 +113,26 @@ export default function Tweet ({isCloseBtnVisible = false ,handleClickCloseBtn})
                     onChange = {
                         (e) => setInputTweet(e.target.value)
                     }
+                    value = {inputTweet}
                 />
+
             </div>
+            {/* Image container */}
+           { 
+            image &&  
+            <div className={style.imageWrapper}>
+                <img
+                    src={image}
+                    height = '100%'
+                    width = '100%'
+                    alt = 'foo'
+                />
+                </div>
+            }
+           {/* tweet btn and icon container */}
+
             <div className={style.tweetFooterWrapper}>
+
                 <div className={style.icons}>
                     {iconList.map(({icon,action},index) => (
                         <div 
@@ -114,15 +143,16 @@ export default function Tweet ({isCloseBtnVisible = false ,handleClickCloseBtn})
                     ))}
                 </div>
                 <div className={style.btnWrapper}>
-                <Button 
-                    customCss={style.tweetBtn}
-                    buttonText = 'Tweet'
-                    hanldleClickBtn = {handleSubmitTweet}
-                />
+                    <Button 
+                        customCss={style.tweetBtn}
+                        buttonText = 'Tweet'
+                        hanldleClickBtn = {handleSubmitTweet}
+                    />
+                </div>   
 
-                </div>
-                    
             </div>
+
+            {/* hidden input */}
             <input
                 type = 'file'
                 hidden
@@ -130,13 +160,7 @@ export default function Tweet ({isCloseBtnVisible = false ,handleClickCloseBtn})
                 onChange = {handleOnSelectImage}
                 name = 'tweetPic'
             />
-            {/* <img
-                src={image}
-                height = '100px'
-                width = '100px'
-                alt = 'foo'
-            /> */}
-            
+
         </div>
     )
 }

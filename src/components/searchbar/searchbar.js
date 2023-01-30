@@ -6,12 +6,10 @@ export default function Searchbar () {
     return(
         <div className={style.wrapper}>
              <SearchIcon className={style.searchIcon}/>
-        <input 
-            className={style.Searchbar} 
-            placeholder = 'Search here ...'
-        />
-       
-
+            <input 
+                className={style.Searchbar} 
+                placeholder = 'Search here ...'
+            />
         </div>
     )
 }

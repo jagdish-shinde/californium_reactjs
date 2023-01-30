@@ -27,6 +27,9 @@
         font-size: calc(20rem/16);
         /* font-weight: 700; */
     }
+    .textArea::-webkit-scrollbar{
+        display: none;
+    }
     .tweetBtn{
         background: rgb(29, 155, 240);
         color: white;
@@ -64,6 +67,13 @@
         padding:0.5rem 1rem;
         cursor: pointer;
         /* border: 1px solid red; */
+    }
+    .imageWrapper{
+        max-height: 20rem;
+        overflow: auto;
+    }
+    .imageWrapper::-webkit-scrollbar{
+        display: none;
     }
 
 }

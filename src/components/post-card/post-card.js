@@ -2,41 +2,32 @@ import style from './post-card.module.css'
 import profile from '../../../src/images/dummyProfile.jpeg'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import FooterIcons from '../../atoms/footer-icons/footer-icons';
-// BiMessageRounded
+import { Fragment } from 'react';
 
 export default function PostCard({postDetails}) {
-
+   
     const {
         name = '',
         handlerName = '',
         organization = '',
-        tweets
+        tweets = [],
+        profilePic
     } = postDetails || {}
 
-    const {
-        tweetText,
-        tweetPic,
-        tweetCount,
-        retweetCount,
-        likesCount,
-        viewsCount,
-        hastags  = [],
-        // TweetReplies
-    } = tweets[0] || {}
-
-    const dataForFooterIcon = {
-        tweetCount,
-        retweetCount,
-        likesCount,
-        viewsCount,
+    if(!tweets.length){    
+        return null
     }
 
     return (
-        <div className={style.wrapper}>
+        <Fragment>
+        { 
+            tweets.map((tweet,index) => (
+
+            <div className={style.wrapper}>
 
             <div className={style.cardWrapper}>
                 <img
-                    src={profile}
+                    src={profilePic}
                     className={style.imgWrapper}
                 />
                 <div className={style.nameWrapper}>
@@ -50,36 +41,44 @@ export default function PostCard({postDetails}) {
 
             <div className={style.container}>
                 <p className={style.tweetText}>
-                    {tweetText}
-                    {organization}
+                    <Fragment>
+                        <p>{tweet.tweetText}</p>
+                        <p>{organization}</p>
+                    </Fragment>
                 </p>
-                <a
+            { tweet.refRenceLink && <a
                     href='https://www.google.com' 
                     style={{ textDecoration: 'none' }} 
                     target='_blank'>
                     https://www.google.com
-                </a>
+                </a>}
             </div>
 
             <div className={style.hashtags}>
-                {hastags.map(tag => (
+                {  [...tweet.hastags? [tweet.hastags] : []].map(tag => (
                     <span>{tag}</span>
                 ))}
             </div>
 
-            <div
+            {tweet.tweetPic && <div
                 className={style.tweetPic}
             >
                 <img
-                    src = {tweetPic}
+                    src = {tweet.tweetPic}
                     height='100%'
                     width='100%'
                 />
-            </div>
+            </div>}
 
             <FooterIcons  
-                data = {dataForFooterIcon}
+                data = {tweet}
             />
         </div>
+
+        ))
+        }
+
+        </Fragment>
+
     )
 }

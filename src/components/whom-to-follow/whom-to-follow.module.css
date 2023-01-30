@@ -1,9 +1,20 @@
 @media screen and (min-width : 1024px){
     .wrapper{
         /* padding-left: 1rem; */
+        background-color: rgb(118, 118, 118,0.1);
+        padding: 1rem 0;
+        border-radius: 10px;
+
     }
     .head{
         padding-left: 1rem;
+    }
+    .ShowMoreText{
+        padding-left: 1rem;
+        font-size: calc(15rem/16);
+        font-weight: 700;
+        color : rgb(29, 155, 240);
+        cursor: pointer;
     }
     
 }

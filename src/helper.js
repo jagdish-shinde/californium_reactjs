@@ -14,3 +14,7 @@ exports.isValidEmailSyntax = (email) => {
 exports.isOnlyLetters = (str) => {
     return /^[A-Za-z\s]+$/.test(str)
 }
+
+exports.getUniqueCode = function (){
+    return Math.floor(1000 + Math.random() * 9000)
+}

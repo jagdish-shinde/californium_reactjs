@@ -9,6 +9,7 @@ export default function Follow ({data}) {
         name,
         handlerName ,
     } = data || {}
+    
     return(
         <div className={style.wrapper}>
             <div className={style.imgWrapper}>

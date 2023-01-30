@@ -5,8 +5,9 @@ import CustomInputField from '../../atoms/custom-input/custom-input';
 import CustomButton from '../../atoms/customButton/custom-button';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { isUserLoggedInAtom } from '../../recoil-states';
+import { isUserLoggedInAtom,newUserDataAtom } from '../../recoil-states';
 import { useSetRecoilState } from 'recoil';
+import { postData } from '../../const';
 
 export default function SignInComponent () {
 
@@ -16,6 +17,7 @@ export default function SignInComponent () {
 
     const nevigate = useNavigate()
     const setUserLoggedInStatus = useSetRecoilState(isUserLoggedInAtom)
+    const setNewUser = useSetRecoilState(newUserDataAtom)
 
 
     const handleSignInInput = (inputVal) => {
@@ -25,12 +27,7 @@ export default function SignInComponent () {
         setPassword(inputPassword)
     }
     function handleClickButton () {
-        const userData = JSON.parse(localStorage.getItem('userData'))
-        if(!userData){
-            alert('No user exist !')
-            return
-        }
-
+        // const userData = JSON.parse(localStorage.getItem('userData'))
 
         if(!signInInput) {
             alert('please Enter Email or Phone to continue !!')
@@ -46,26 +43,53 @@ export default function SignInComponent () {
             return
         }
 
-        const {
-            password : savedPassword ,
-            email ,
-            phone
-        } = userData || {}
+        const user = postData.find(userDetails => {
+            const {
+                mobile,
+                email,
+                password:savedPassword
+            } = userDetails || {}
+        
+            if(mobile == signInInput || email == signInInput){
+                if (password === savedPassword){
+                    return userDetails
+                }
+            }
+        })
 
-        if(email && signInInput!==email){
-            alert('No such user exist , please signUp to start !!')
+       
+        if(user){
+            localStorage.setItem('userData',JSON.stringify(user))
+            setUserLoggedInStatus(true)
+            nevigate('/')
+            setNewUser(user)
             return
         }
-        if(phone && signInInput !== phone) {
-            alert('No such user exist , please signUp to start !!')
-            return
-        }
-        if(password !== savedPassword){
-            alert('Wrong password !!')
-            return
-        }
-        setUserLoggedInStatus(true)
-        nevigate('/')
+
+
+        // alert('User not exist !! Please signUp ...')
+
+        
+        // const {
+        //     password : savedPassword ,
+        //     email ,
+        //     phone
+        // } = userData || {}
+
+        // if(email && signInInput!==email){
+        //     alert('No such user exist , please signUp to start !!')
+        //     return
+        // }
+        // if(phone && signInInput !== phone) {
+        //     alert('No such user exist , please signUp to start !!')
+        //     return
+        // }
+        // if(password !== savedPassword){
+        //     alert('Wrong password !!')
+        //     return
+        // }
+        // setUserLoggedInStatus(true)
+        // nevigate('/')
     }
 
     return(

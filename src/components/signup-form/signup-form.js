@@ -13,11 +13,13 @@ import {
     isValidEmailSyntax ,
     isValidMobile,
     isOnlyLetters,
-    isValidString
+    isValidString,
+    getUniqueCode
  } from '../../helper'
  import {useNavigate} from 'react-router-dom'
  import { isUserLoggedInAtom } from '../../recoil-states'
 import { useSetRecoilState } from 'recoil'
+import { newUserDataAtom } from '../../recoil-states'
 
 export default function SignupForm () {
 
@@ -32,6 +34,7 @@ export default function SignupForm () {
 
     const nevigate = useNavigate()
     const setUserLoginStatus = useSetRecoilState(isUserLoggedInAtom)
+    const setNewUser = useSetRecoilState(newUserDataAtom)
 
     // we can handle this function in more appropriate way
     // will do it togather , so you guys can get this thing .
@@ -85,19 +88,24 @@ export default function SignupForm () {
             return
         }
 
+        // const existingUser = user
 
+
+        const uniqueCode = phone ? phone.slice(0,4) : getUniqueCode()
         const userData = {
             name ,
             ...(phone && {phone}),
             ...(email && {email}),
             password,
-            dateOfBirth : `${date + '/' + month + '/' + year}`
+            dateOfBirth : `${date + '/' + month + '/' + year}`,
+            handlerName : '@' + name.split(' ')[0] + uniqueCode
         }
-        localStorage.setItem('userData',JSON.stringify(userData))
+      
+        // localStorage.setItem('userData',JSON.stringify(userData))
+        setNewUser(userData)
         setUserLoginStatus(true)
         nevigate('/')
         
-
     }
     function handleToggleAlternateField () {
         setIsShowingEmailField(!isShowingEmailField)

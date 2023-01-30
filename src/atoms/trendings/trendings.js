@@ -5,7 +5,10 @@ import { Fragment, useState } from 'react';
 
 
 export default function Trendings ({data,customCss ,handleClickPopover}) {
+
     const [isPopverVisible , setIsPopoverVisible] = useState(false)
+
+    // extracting data here ...
     const{
         Trender = '',
         tweets = 0,
@@ -14,7 +17,8 @@ export default function Trendings ({data,customCss ,handleClickPopover}) {
     
     function GetPoover () {
         return (
-            <div className={style.popOver} 
+            <div 
+                className={style.popOver} 
                 onClick = {() => handleClickPopover (id)}
             >
                 <SentimentVeryDissatisfiedIcon/>
@@ -24,20 +28,18 @@ export default function Trendings ({data,customCss ,handleClickPopover}) {
     }
     return(
         <Fragment>
-
-<div className={`${style.wrapper} ${customCss}`}>
-            <div className={style.trendingData}>
-                <p className={style.trendingDataText}> Trending in india </p>
-                <p className={style.trendingDataText}> {Trender}</p>
-                <p className={style.trendingDataText}>{tweets}</p>
+            <div className={`${style.wrapper} ${customCss}`}>
+                <div className={style.trendingData}>
+                    <p className={style.trendingDataText}> Trending in india </p>
+                    <p className={style.trendingDataText}> {Trender}</p>
+                    <p className={style.trendingDataText}>{tweets}</p>
+                </div>
+                <MoreHorizIcon 
+                    className={style.moreIcon} 
+                    onClick = {() => setIsPopoverVisible(!isPopverVisible)}
+                />
             </div>
-        <MoreHorizIcon className={style.moreIcon} onClick = {() => setIsPopoverVisible(!isPopverVisible)}/>
-    </div>
-   { isPopverVisible && <GetPoover/>}
-
+            { isPopverVisible && <GetPoover/>}
         </Fragment>
-       
-
-    )
-    
+    ) 
 }

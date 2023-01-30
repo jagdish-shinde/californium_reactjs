@@ -18,6 +18,7 @@ export default function FooterIcons ({data}) {
         likesCount,
         viewsCount,
     } = data || {}
+    // alert(tweetCount)
     const likeIcon  = isLikesPost ?  
     <FcLike className={style.like}/> :
      <AiOutlineHeart className={style.like}/>
